@@ -1,0 +1,28 @@
+Description: Use ca-certificates instead of own bundle
+Author: Marius Gedminas <marius@cipherhealth.com>
+Forwarded: no
+Last-Update: 2013-04-16
+
+--- duo-client-2.0.orig/setup.py
++++ duo-client-2.0/setup.py
+@@ -8,9 +8,6 @@ setup(
+     author_email='support@duosecurity.com',
+     url='https://github.com/duosecurity/duo_client_python',
+     packages=['duo_client'],
+-    data_files=[
+-        ('duo_client', ['duo_client/ca_certs.pem']),
+-    ],
+     license='BSD',
+     classifiers=[
+         'Programming Language :: Python',
+--- duo-client-2.0.orig/duo_client/client.py
++++ duo-client-2.0/duo_client/client.py
+@@ -29,7 +29,7 @@ except ImportError as e:
+ 
+ from https_wrapper import CertValidatingHTTPSConnection
+ 
+-DEFAULT_CA_CERTS = os.path.join(os.path.dirname(__file__), 'ca_certs.pem')
++DEFAULT_CA_CERTS = "/etc/ssl/certs/ca-certificates.crt"
+ 
+ 
+ def canon_params(params):

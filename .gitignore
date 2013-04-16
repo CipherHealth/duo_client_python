@@ -12,3 +12,4 @@ debian/python-duo-client.substvars
 debian/python-duo-client.prerm.debhelper
 debian/python-duo-client.postinst.debhelper
 debian/python-duo-client.debhelper.log
+.pc/

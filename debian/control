@@ -1,0 +1,18 @@
+Source: duo-client
+Section: python
+Priority: optional
+Maintainer: Marius Gedminas <marius@cipherhealth.com>
+Build-Depends: debhelper (>= 8.0.0), python, python-setuptools
+Standards-Version: 3.9.3
+Homepage: https://github.com/duosecurity/duo_client_python
+
+Package: python-duo-client
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, ca-certificates
+Description: Duo API client library
+ Python client library for:
+ .
+ - Duo Verify API: http://www.duosecurity.com/docs/duoverify
+ - Duo Auth API: http://www.duosecurity.com/docs/authapi
+ - Duo Admin API: http://www.duosecurity.com/docs/adminapi
+ - Duo Accounts API: http://www.duosecurity.com/docs/accountsapi
